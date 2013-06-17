@@ -114,6 +114,7 @@
   <ItemGroup>
     <ClCompile Include="CDQrobotEvent.cpp" />
     <ClCompile Include="DlgMain.cpp" />
+    <ClCompile Include="Msc_QISR_Tools.cpp" />
     <ClCompile Include="Msc_QTTS_Tools.cpp" />
     <ClCompile Include="QRob_Usher.cpp" />
     <ClCompile Include="QRob_UsherCtrl.cpp" />
@@ -131,6 +132,7 @@
     <ClInclude Include="CQrobotSpeak.h" />
     <ClInclude Include="CQrobotTalk.h" />
     <ClInclude Include="DlgMain.h" />
+    <ClInclude Include="Msc_QISR_Tools.h" />
     <ClInclude Include="Msc_QTTS_Tools.h" />
     <ClInclude Include="msp_errors.h" />
     <ClInclude Include="msp_types.h" />

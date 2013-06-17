@@ -8,7 +8,6 @@ Msc_QTTS_Tools::Msc_QTTS_Tools(void)
 	//APPID请勿随意改动
 	m_configs = "appid=51b1ef85";
 
-
 	params = "ssm=1,auf=audio/L16;rate=16000,vcn=xiaoyan";
 	int ret = 0;
 	char key = 0;
@@ -43,7 +42,7 @@ int Msc_QTTS_Tools::fini()
 	return ret;
 }
 
-//合成文本
+//语音合成
 int Msc_QTTS_Tools::text_to_speech(const char* src_text ,const char* des_path ,const char* params)
 {
 	struct wave_pcm_hdr pcmwavhdr = default_pcmwavhdr;

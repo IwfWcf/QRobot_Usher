@@ -1,10 +1,17 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <tchar.h>
+#include <conio.h>
+#include <string.h>
+#include <stdlib.h>
 #include "qtts.h"
 
 #ifdef _WIN64
-#pragma comment(lib,"../../lib/msc_x64.lib")//x64
+#pragma comment(lib,"../lib/msc_x64.lib")//x64
 #else
-#pragma comment(lib,"../../lib/msc.lib")//x86
+#pragma comment(lib,"../lib/msc.lib")//x86
 #endif
 
 typedef int SR_DWORD;

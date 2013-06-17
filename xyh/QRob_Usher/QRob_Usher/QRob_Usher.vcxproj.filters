@@ -54,6 +54,9 @@
     <ClCompile Include="Msc_QTTS_Tools.cpp">
       <Filter>源文件\msc_tools</Filter>
     </ClCompile>
+    <ClCompile Include="Msc_QISR_Tools.cpp">
+      <Filter>源文件\msc_tools</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -108,6 +111,9 @@
       <Filter>头文件\msc_toos</Filter>
     </ClInclude>
     <ClInclude Include="Msc_QTTS_Tools.h">
+      <Filter>头文件\msc_toos</Filter>
+    </ClInclude>
+    <ClInclude Include="Msc_QISR_Tools.h">
       <Filter>头文件\msc_toos</Filter>
     </ClInclude>
   </ItemGroup>
