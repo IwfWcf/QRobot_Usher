@@ -2,6 +2,9 @@ xyh/QRob_Usher/ipch/*
 xyh/QRob_Usher/*.sdf
 xyh/QRob_Usher/*.suo
 xyh/QRob_Usher/Debug/*
+xyh/QRob_Usher/QRobot_Usher.opensdf
 
 xyh/program-ab/doc/*
 xyh/program-ab/out/*
+xyh/QRob_Usher/QRob_Usher/QRob_Usher.vcxproj
+xyh/QRob_Usher/QRob_Usher/QRob_Usher.vcxproj.filters
