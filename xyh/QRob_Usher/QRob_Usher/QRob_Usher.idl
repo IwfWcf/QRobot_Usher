@@ -1,0 +1,51 @@
+// QRob_Usher.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(QRob_Usher.tlb)，该类型库将成为
+// QRob_Usher.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(871CD819-5001-4684-A1AF-6962844786F5), version(1.0),
+  control ]
+library QRob_UsherLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CQRob_UsherCtrl 的主调度接口
+	[ 
+		uuid(816048DA-D1E1-45D3-9F83-7C11C1D36FD4)	
+	]
+	dispinterface _DQRob_Usher
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+	};
+
+	//  CQRob_UsherCtrl 的事件调度接口
+
+	[ 
+		uuid(765C8152-2646-4792-B08E-8807F06D1C1A)	
+	]
+	dispinterface _DQRob_UsherEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CQRob_UsherCtrl 的类信息
+	[
+		uuid(89E57454-D37D-4021-B6CD-82E161670F79)
+	]
+	coclass QRob_Usher
+	{
+		[default] dispinterface _DQRob_Usher;
+		[default, source] dispinterface _DQRob_UsherEvents;
+	};
+
+};

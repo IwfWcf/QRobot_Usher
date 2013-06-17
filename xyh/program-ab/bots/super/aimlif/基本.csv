@@ -1,0 +1,8 @@
+0,你好,*,*,你好,基本.aiml
+0,你的名字,*,*,<srai>your name</srai>,基本.aiml
+0,你的小名,*,*,<srai>你的名字</srai>,基本.aiml
+0,谁创造了你,*,*,谢悦鸿,基本.aiml
+0,我很帅,*,*,<random><li>少臭美</li><li>我也这么觉得</li><li>哈哈，其实我比你帅</li></random>,基本.aiml
+0,拜拜,*,*,<random><li>我还想和你聊天</li><li>下次再聊</li><li>和你聊天很开心</li></random>,基本.aiml
+0,再见,我还想和你聊天,*,你很烦，不再见,基本.aiml
+0,再回,*,*,<srai>拜拜</srai>,基本.aiml

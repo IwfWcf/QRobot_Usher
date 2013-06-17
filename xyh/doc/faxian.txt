@@ -1,0 +1,13 @@
+1、
+_ATL_NO_AUTOMATIC_NAMESPACE  与 #include <atlsafe.h>冲突
+应该吧_ATL_NO_AUTOMATIC_NAMESPACE 注释掉
+不然会报错：
+	1>e:\qrobot_usher.git\xyh\qrob_usher\qrob_usher\dlgmain.cpp(130): error C2065: “CComSafeArray”: 未声明的标识符
+1>e:\qrobot_usher.git\xyh\qrob_usher\qrob_usher\dlgmain.cpp(130): error C2275: “BSTR”: 将此类型用作表达式非法
+1>          c:\program files\microsoft sdks\windows\v7.0a\include\wtypes.h(1108) : 参见“BSTR”的声明
+1>e:\qrobot_usher.git\xyh\qrob_usher\qrob_usher\dlgmain.cpp(130): error C2065: “strList”: 未声明的标识符
+1>e:\qrobot_usher.git\xyh\qrob_usher\qrob_usher\dlgmain.cpp(138): error C2065: “strList”: 未声明的标识符
+1>e:\qrobot_usher.git\xyh\qrob_usher\qrob_usher\dlgmain.cpp(138): error C2228: “.Attach”的左边必须有类/结构/联合
+1>          类型是“'unknown-type'”
+1>e:\qrobot_usher.git\xyh\qrob_usher\qrob_usher\dlgmain.cpp(141): error C2065: “strList”: 未声明的标识符
+1>  CDQrobotEvent.cpp

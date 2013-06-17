@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\msc_tools">
+      <UniqueIdentifier>{f4667dd8-2a13-41ff-9beb-b3cb320f6261}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\msc_toos">
+      <UniqueIdentifier>{2e27f3c6-cd84-4975-89e9-6edc38ea5e90}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="QRob_Usher.def">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="QRob_Usher.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="QRob_UsherCtrl.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="QRob_Usher.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="QRob_UsherCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="QRob_UsherPropPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CDQrobotEvent.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgMain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Msc_QTTS_Tools.cpp">
+      <Filter>源文件\msc_tools</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QRob_Usher.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QRob_UsherCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="QRob_UsherPropPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CDQrobotEvent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CQrobotBasicImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CQrobotController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CQrobotScript.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CQrobotSpeak.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CQrobotTalk.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgMain.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="msp_errors.h">
+      <Filter>头文件\msc_toos</Filter>
+    </ClInclude>
+    <ClInclude Include="msp_types.h">
+      <Filter>头文件\msc_toos</Filter>
+    </ClInclude>
+    <ClInclude Include="qisr.h">
+      <Filter>头文件\msc_toos</Filter>
+    </ClInclude>
+    <ClInclude Include="qtts.h">
+      <Filter>头文件\msc_toos</Filter>
+    </ClInclude>
+    <ClInclude Include="Msc_QTTS_Tools.h">
+      <Filter>头文件\msc_toos</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="QRob_Usher.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="QRob_Usher.idl">
+      <Filter>源文件</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>
