@@ -1,0 +1,37 @@
+====》2013/6/19                    位置信息获取                                
+      	HRESULT hr;	
+							CLSID QrobotControllerCSD={0};
+							static CQrobotController m_comclass;
+							if(LPDISPATCH(m_comclass)==NULL)
+							{
+								hr = CLSIDFromProgID(_T("QrobotInterface.Controller.1"),&QrobotControllerCSD);
+								if(SUCCEEDED(hr))
+								{
+									LPDISPATCH pController = NULL; 
+									hr =::CoCreateInstance(	QrobotControllerCSD,
+															NULL,
+															CLSCTX_ALL,
+															IID_IDispatch,
+															(void**)&pController);
+									ATLASSERT(SUCCEEDED(hr));
+									m_comclass.AttachDispatch(pController);
+								}
+								else
+								{TRACE("faile");}
+							}
+					m_comclass.UpdateMotorPosition();
+					unsigned long * params = new unsigned long;
+					
+					m_comclass.GetMotorPosition(params);
+					TRACE("Get motion position:\n");
+					TRACE("%d\n",params);
+					TRACE("%x\n",*params);
+					TRACE("%d\n",*params);
+					
+					BYTE *pData = new BYTE[4];
+					PBYTE pTemp = (PBYTE)&(*params);
+					for (int i = 0; i < 4; i++)
+					{  
+						pData[i] = *(pTemp+i);
+						TRACE("%#x\t", pData[i]);
+					}
