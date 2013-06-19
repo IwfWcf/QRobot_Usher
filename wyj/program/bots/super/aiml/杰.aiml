@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GB2312"?>
+<aiml>
+<category>
+<pattern>你好</pattern>
+<template>你也好</template>
+</category> 
+<category>
+<pattern>你叫什么名字</pattern>
+<template>我叫小Q</template>
+</category> 
+<category>
+<pattern>你聪明吗</pattern>
+<template>当然咯</template>
+</category> 
+</aiml>
