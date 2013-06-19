@@ -1,7 +1,7 @@
-#include <opencv2\opencv.hpp>
-#include <opencv2\objdetect\objdetect.hpp>
-#include <opencv2\highgui\highgui.hpp>
-#include <opencv2\imgproc\imgproc.hpp>
+#include "opencv2\objdetect\objdetect.hpp"
+#include "opencv2\highgui\highgui.hpp"
+#include "opencv2\imgproc\imgproc.hpp"
+
 #include <iostream>
 #include <string>
 
@@ -26,8 +26,9 @@ void detectAndDisplay( Mat frame )
 
   //-- ∂‡≥ﬂ¥ÁºÏ≤‚»À¡≥
   face_cascade.detectMultiScale( frame_gray, faces, 1.1, 2, 0|CV_HAAR_SCALE_IMAGE, Size(30, 30) );
-  Mat face = frame_gray(faces[0]);
-  imwrite("face.jpg", face);
+  Mat face = frame_gray(faces[0]), face_resized;
+  resize(face, face_resized, Size(100, 100), 1.0, 1.0, INTER_CUBIC);
+  imwrite("face.jpg", face_resized);
 
   for( int i = 0; i < faces.size(); i++ )
   {
