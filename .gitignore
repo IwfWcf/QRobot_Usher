@@ -1,10 +1,16 @@
-xyh/QRob_Usher/ipch/*
-xyh/QRob_Usher/*.sdf
-xyh/QRob_Usher/*.suo
+*.sdf
+*.suo
 xyh/QRob_Usher/Debug/*
-xyh/QRob_Usher/QRobot_Usher.opensdf
+*.opensdf
 
 xyh/program-ab/doc/*
 xyh/program-ab/out/*
 xyh/QRob_Usher/QRob_Usher/QRob_Usher.vcxproj
 xyh/QRob_Usher/QRob_Usher/QRob_Usher.vcxproj.filters
+
+
+*/ipch/*
+wyj/VC/Release/*
+
+
+
