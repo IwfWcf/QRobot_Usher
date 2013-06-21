@@ -30,8 +30,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
         <% 
-        	String wenti = new String(request.getParameter("wenti").getBytes("ISO-8859-1"),"UTF-8");
-        	String daan = new String(request.getParameter("daan").getBytes("ISO-8859-1"),"UTF-8") ;
+        	String firstwenti = new String(request.getParameter("firstwenti").getBytes("ISO-8859-1"),"UTF-8");
+        	String firstdaan = new String(request.getParameter("firstdaan").getBytes("ISO-8859-1"),"UTF-8") ;
+        	String secondwenti = new String(request.getParameter("secondwenti").getBytes("ISO-8859-1"),"UTF-8");
+        	String seconddaan = new String(request.getParameter("seconddaan").getBytes("ISO-8859-1"),"UTF-8") ;
         	
         	
        
@@ -63,13 +65,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	       writer = new OutputStreamWriter(stream);
     	       writer.write("<category>\n");   	  
     	       writer.write("<pattern>");
-    	       writer.write(wenti);
+    	       writer.write(firstwenti);
     	       writer.write("</pattern>\n");  
     	       writer.write("<template>");
-    	       writer.write(daan);
+    	       writer.write(firstdaan);
     	       writer.write("</template>\n");
     	       writer.write("</category>\n"); 
-    	        writer.write("</aiml>"); 
+    	       
+    	       writer.write("<category>\n"); 
+    	       writer.write("<pattern>");
+    	       writer.write(secondwenti);
+    	       writer.write("</pattern>\n");
+    	       writer.write("<that>");
+    	       writer.write(firstdaan);
+    	       writer.write("</that>\n");
+    	       writer.write("<template>");
+    	       writer.write(seconddaan);
+    	       writer.write("</template>\n");
+    	       writer.write("</aiml>"); 
 
                writer.close();
                stream.close();
@@ -81,9 +94,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	
         	
          %>
-         <%= wenti %><br>
-         <%= daan %><br>
-
+         <%= firstwenti %><br>
+         <%= firstdaan %><br>
+         <%= secondwenti %><br>
+         <%= seconddaan %><br>
     	添加成功 <br>
     	<a href="http://localhost:8080/program/index.jsp" >返回上一界面</a>
   </body>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="GB2312"?>
+<aiml> 
+<category>
+<pattern>你真好看</pattern>
+<template>当然咯</template>
+</category>
+<category>
+<pattern>你真好</pattern>
+<template>嗯</template>
+</category>
+<category>
+<pattern>你聪明吗</pattern>
+<template>小Q很聪明</template>
+</category>
+<category>
+<pattern>真的假的？</pattern>
+<that>小Q很聪明</that>
+<template>真的</template>
+</aiml>

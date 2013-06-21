@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -18,21 +18,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	
+	
+	
   </head>
   
   <body>
-   <select size="5" >
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option>
-      <option value="audi">Aui</option>
-      <option value="audi">Adi</option>
-      <option value="audi">udi</option>
-      <option value="audi">Ai</option>
-   </select><br>
-   <a  href="http://localhost:8080/program/add.jsp">新增</a>
-   <a  href="http://www.w3school.com.cn/">删除</a>
-   <a  href="http://www.w3school.com.cn/">查看</a>
+  	<h1 align="center"> 小Q学学学</h1>
+  	<form method="post" action="add.jsp">
+  	  	请输入问题<input type="text" name="wenti">
+ 	 	请输入答案<input type="text" name="daan">
+ 	 	<input type="submit" name="submit" value="提交添加内容">
+  	</form>
+    <br>有关联的两个问题：<br>
+  	<form method="post"" action="add1.jsp">
+  		请输入第一个问题<input type="text" name="firstwenti">
+  		请输入第一个答案<input type="text" name="firstdaan"><br>
+  		请输入第二个问题<input type="text" name="secondwenti">
+  		请输入第二个答案<input type="text" name="seconddaan">
+  		<input type="submit" name="submit" value="提交添加内容">	
+  	</form>
+
   </body>
 </html>
