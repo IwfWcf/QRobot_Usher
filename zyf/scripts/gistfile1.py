@@ -37,9 +37,11 @@ def go(query, path):
 
   cascade_fn = "haarcascade_frontalface_alt.xml"
   cascade = cv2.CascadeClassifier(cascade_fn)
+  nested_fn = "haarcascade_eye.xml"
+  nested = cv2.CascadeClassifier(nested_fn)
   start = 1 # Google's start query string parameter for pagination.
   count = 0
-  while count < 10: # Google will only return a max of 56 results.
+  while start < 101 and count < 10: # Google will only return a max of 56 results.
     r = requests.get(BASE_URL.encode("utf-8") % start)
     for image_info in json.loads(r.text)['items']:
       url = image_info['link']
@@ -59,10 +61,12 @@ def go(query, path):
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         gray = cv2.equalizeHist(gray)
         rects = detect(gray, cascade)
-        if (len(rects) == 1):
-          for x1, y1, x2, y2 in rects:
-            roi = img[y1:y2, x1:x2]
-            cv2.imwrite(filename.encode("gbk"), roi)
+        if len(rects) == 1:
+          x1, y1, x2, y2 = rects[0]
+          roi = gray[y1:y2, x1:x2]
+          subrects = detect(roi, nested)
+          if len(subrects) != 2: continue
+          cv2.imwrite(filename.encode("gbk"), roi)
           count += 1
           if count == 10: break
       except IOError, e:
