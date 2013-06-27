@@ -30,10 +30,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
         <% 
-        	String firstwenti = new String(request.getParameter("firstwenti").getBytes("ISO-8859-1"),"UTF-8");
-        	String firstdaan = new String(request.getParameter("firstdaan").getBytes("ISO-8859-1"),"UTF-8") ;
-        	String secondwenti = new String(request.getParameter("secondwenti").getBytes("ISO-8859-1"),"UTF-8");
-        	String seconddaan = new String(request.getParameter("seconddaan").getBytes("ISO-8859-1"),"UTF-8") ;
+        	String wenti = new String(request.getParameter("wenti").getBytes("ISO-8859-1"),"UTF-8");
+        	String daan1 = new String(request.getParameter("daan1").getBytes("ISO-8859-1"),"UTF-8") ;
+        	String daan2 = new String(request.getParameter("daan2").getBytes("ISO-8859-1"),"UTF-8") ;
+        	String daan3 = new String(request.getParameter("daan3").getBytes("ISO-8859-1"),"UTF-8") ;
+        	String daan4 = new String(request.getParameter("daan4").getBytes("ISO-8859-1"),"UTF-8") ;
+        	String daan5 = new String(request.getParameter("daan5").getBytes("ISO-8859-1"),"UTF-8") ;
+        	String daan6 = new String(request.getParameter("daan6").getBytes("ISO-8859-1"),"UTF-8") ;
+        	String[] daan = {daan1 , daan2 , daan3 , daan4 , daan5 , daan6} ;
         	
         	
        
@@ -65,23 +69,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     	       writer = new OutputStreamWriter(stream);
     	       writer.write("<category>\n");   	  
     	       writer.write("<pattern>");
-    	       writer.write(firstwenti);
+    	       writer.write(wenti);
     	       writer.write("</pattern>\n");  
-    	       writer.write("<template>");
-    	       writer.write(firstdaan);
-    	       writer.write("</template>\n");
+    	       writer.write("<template><random>\n");
+    	       for (int i=0 ; i<daan.length ; i++){
+    	       		if(!daan[i].isEmpty()){
+    	       			writer.write("<li>" + daan[i] + "</li>\n");  
+    	       		} 	       			
+    	       		
+    	       }
+    	       writer.write("</random></template>\n");
     	       writer.write("</category>\n"); 
-    	       
-    	       writer.write("<category>\n"); 
-    	       writer.write("<pattern>");
-    	       writer.write(secondwenti);
-    	       writer.write("</pattern>\n");
-    	       writer.write("<that>");
-    	       writer.write(firstdaan);
-    	       writer.write("</that>\n");
-    	       writer.write("<template>");
-    	       writer.write(seconddaan);
-    	       writer.write("</template>\n");
     	       writer.write("</aiml>"); 
 
                writer.close();
@@ -94,10 +92,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         	
         	
          %>
-         <%= firstwenti %><br>
-         <%= firstdaan %><br>
-         <%= secondwenti %><br>
-         <%= seconddaan %><br>
+         <%= wenti %><br>
+         <%= daan1 %><br>
+         <%= daan2 %><br>
+         <%= daan3 %><br>
+         <%= daan4 %><br>
+         <%= daan5 %><br>
+         <%= daan6 %><br>
+
+
     	添加成功 <br>
     	<a href="index.jsp" >返回上一界面</a>
   </body>

@@ -85,6 +85,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
          <%= daan %><br>
 
     	添加成功 <br>
-    	<a href="http://localhost:8080/program/index.jsp" >返回上一界面</a>
+    	<a href="index.jsp" >返回上一界面</a>
   </body>
 </html>
