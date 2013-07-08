@@ -120,7 +120,7 @@ public class Bot {
         AIMLMap predecessor = new AIMLMap(MagicStrings.map_predecessor);
         mapMap.put(MagicStrings.map_predecessor, predecessor);
         //System.out.println("setMap = "+setMap);
-        Date aimlDate = new Date(new File(MagicStrings.aiml_path).lastModified());
+        Date aimlDate = new Date(new File(MagicStrings.aiml_path).lastModified());        System.out.println("aimlDate:"+aimlDate.toString());
         Date aimlIFDate = new Date(new File(MagicStrings.aimlif_path).lastModified());
         System.out.println("AIML modified "+aimlDate+" AIMLIF modified "+aimlIFDate);
         readDeletedIFCategories();

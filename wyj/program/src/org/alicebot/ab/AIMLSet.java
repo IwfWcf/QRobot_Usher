@@ -89,7 +89,7 @@ public class AIMLSet extends HashSet<String> {
         try {
             while ((strLine = br.readLine()) != null  && strLine.length() > 0)   {
                 cnt++;
-                //strLine = bot.preProcessor.normalize(strLine).toUpperCase();
+               //strLine = bot.preProcessor.normalize(strLine).toUpperCase();
                 // assume the set is pre-normalized for faster loading
                 if (strLine.startsWith("external")) {
                     String[] splitLine = strLine.split(":");
@@ -102,7 +102,12 @@ public class AIMLSet extends HashSet<String> {
                     }
                 }
                 else {
-                    strLine = strLine.toUpperCase().trim();
+
+                    //modify by JohngXie
+                    /*
+                    *为了符合中文分词
+                     */
+                    strLine = ChineseTokenizer.morphSentence(strLine).toUpperCase().trim();
                     String [] splitLine = strLine.split(" ");
                     int length = splitLine.length;
                     if (length > maxLength) maxLength = length;

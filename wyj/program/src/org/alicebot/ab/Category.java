@@ -324,6 +324,36 @@ public class Category {
         template = Utilities.fixCSV(template);
         filename = Utilities.fixCSV(filename);
         }
+        {
+            String morphPattern = ChineseTokenizer.morphSentence(pattern);
+            System.out.println("<pattern>"+pattern+"</pattern> --> <pattern>"+morphPattern+"</pattern>");
+            pattern = morphPattern;
+            String morphThatPattern = ChineseTokenizer.morphSentence(that);
+            System.out.println("<that>"+that+"</that> --> <that>"+morphThatPattern+"</that>");
+            that = morphThatPattern;
+            String morphTopicPattern = ChineseTokenizer.morphSentence(topic);
+            System.out.println("<topic>"+topic+"</topic> --> <topic>"+morphTopicPattern+"</topic>");
+            topic = morphTopicPattern;
+          //  String morphTemplatePattern = ChineseTokenizer.morphSentence(template);
+            //System.out.println("<template>"+template+"</template> --> <template>"+morphTemplatePattern+"</template>");
+            //template = morphTemplatePattern;
+        }
+        /*
+        {
+            String morphPattern = JapaneseTokenizer.morphSentence(pattern);
+            System.out.println("<pattern>"+pattern+"</pattern> --> <pattern>"+morphPattern+"</pattern>");
+            pattern = morphPattern;
+            String morphThatPattern = JapaneseTokenizer.morphSentence(that);
+            System.out.println("<that>"+that+"</that> --> <that>"+morphThatPattern+"</that>");
+            that = morphThatPattern;
+            String morphTopicPattern = JapaneseTokenizer.morphSentence(topic);
+            System.out.println("<topic>"+topic+"</topic> --> <topic>"+morphTopicPattern+"</topic>");
+            topic = morphTopicPattern;
+            String morphTemplatePattern = JapaneseTokenizer.morphSentence(template);
+            System.out.println("<template>"+template+"</template> --> <template>"+morphTemplatePattern+"</template>");
+            template = morphTemplatePattern;
+        }
+        */
         this.pattern = pattern.trim().toUpperCase();
         this.that = that.trim().toUpperCase();
         this.topic = topic.trim().toUpperCase();
@@ -332,7 +362,7 @@ public class Category {
         this.activationCnt = activationCnt;
         matches = null;
         this.categoryNumber = categoryCnt++;
-        //System.out.println("Creating "+categoryNumber+" "+inputThatTopic());
+        System.out.println("Creating "+categoryNumber+" "+inputThatTopic());
     }
 
     /**

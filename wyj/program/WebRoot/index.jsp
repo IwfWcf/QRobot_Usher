@@ -25,18 +25,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   	<h1 align="center"> 小Q学学学</h1>
-   	类型1：
-  	<form method="post" action="add.jsp">
-  	  	请输入问题<input type="text" name="wenti">
+  	<center>
+   	类型1：  
+  	<form  method="post" action="add.jsp">
+  	  	请输入问题<input  type="text" name="wenti">
  	 	请输入答复<input type="text" name="daan">
  	 	<input type="submit" name="submit" value="提交添加内容">
-  	</form>
+  	</form> 	
            类型2：
   	<form method="post"" action="add1.jsp">
   		请输入第一个问题<input type="text" name="firstwenti">
   		请输入第一个答复<input type="text" name="firstdaan"><br>
   		请输入第二个问题<input type="text" name="secondwenti">
-  		请输入第二个答复<input type="text" name="seconddaan">
+  		请输入第二个答复<input type="text" name="seconddaan"><br>
   		<input type="submit" name="submit" value="提交添加内容">	
   	</form>
   	类型3：
@@ -49,10 +50,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<form method="post" action="add3.jsp">
   		问题<input type="text" name="wenti">
   		答复1<input type="text" name="daan1" > 答复2<input type="text" name="daan2"> 答复3<input type="text" name="daan3"><br/>
-  		答复4<input type="text" name="daan4" > 答复5<input type="text" name="daan5"> 答复6<input type="text" name="daan6">
-  		<input type="submit" value="提交添加内容">
+  		答复4<input type="text"  name="daan4" > 答复5<input type="text" name="daan5"> 答复6<input type="text" name="daan6">
+  		<input type="submit"  value="提交添加内容">
   	</form>
   	<br/>
   	<a href="help.jsp">帮助</a>
+  	</center>
   </body>
 </html>

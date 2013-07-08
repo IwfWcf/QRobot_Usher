@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+<!-- File: MyTrain.aiml -->
+<!-- Author:Johng Xie-->
+<!-- Last modified: 六月 20, 2013 -->
+<!--  -->
+<!-- This AIML file is part of the SUPER 0.0.4 chat bot knowledge base. -->
+<!--  -->
+<!-- The SUPER brain is Copyright &copy; 2013 by ALICE AI Foundation. -->
+<!--  -->
+<!-- The SUPER brain is released under the terms of the GNU Lesser General -->
+<!-- Public License, as published by the Free Software Foundation. -->
+<!--  -->
+<!-- This file is distributed WITHOUT ANY WARRANTY; without even the  -->
+<!-- implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   -->
+<!--  -->
+<!-- For more information see http://www.alicebot.org -->
+
+<!--进入训练模式-->
+
+<category>
+<pattern>进入训练模式</pattern>
+
+<template>
+	<think><set name = "topic">training</set></think>
+	<srai>TRAININGUSESET  请提问</srai>
+</template>
+
+</category>
+<topic name = "training">
+<!--提问-->
+<category>
+<pattern>#</pattern>
+<that><set>请提问</set></that>
+	<!--<topic>training</topic>-->
+<template>
+	<think>
+		<set name = "isEmptyQuestion"><srai>TRAININGISEMPTY<star/></srai></set>
+	</think>
+	<condition name = "isEmptyQuestion">
+		<li value = "true">
+			问题不能为空。
+			<srai>TRAININGUSESET 请提问</srai>
+		</li>
+		<li value = "false">
+			<think>
+				<set name = "newPattern"><star/></set>
+				<set name = "topic">unknown</set>
+				<set name = "exitedResponse"><srai><star/></srai></set>
+				<set name = "topic">training</set>
+			</think>
+			<condition name = "exitedResponse">
+				<li value = "I have no answer for that.">
+					请您为我提供答案
+				</li>
+				<li>
+					已有回答：<get name = "exitedResponse"/>。
+					您对这个答案满意吗
+				</li>
+			</condition>
+		</li>
+	</condition>
+	
+</template>
+</category>
+
+
+<!--回答-->
+<category>
+	<pattern>#</pattern>
+	<that>您对这个答案满意吗</that>
+	<topic>training</topic>
+	<template>
+		<think>
+			<set name = "isEmptyAnswer"><srai>TRAININGISEMPTY<star/></srai></set>
+		</think>
+		<condition name = "isEmptyAnswer">
+			<li value = "true">
+				答复不能为空。请回答同意或者不同意？
+				您的问题已有答案:<get name = "exitedResponse"/>。
+				您对这个答案满意吗
+			</li>
+			<li value = "false">
+				<think>
+					<set name = "isExistSatisfy"><srai>TRAININGSUPPORT<star/></srai></set>
+				</think>
+				<condition name = "isExistSatisfy">
+					<li value = "agree">
+						<srai>TRAININGUSESET 得意</srai>！
+						<srai>TRAININGUSESET 请提问</srai>
+					</li>
+					<li value = "disagree">
+						请您为我提供答案
+					</li>
+					<li value ="disunderstand">
+						听不懂，请回答同意或者不同意？
+						您的问题已有答案:<get name = "exitedResponse"/>。
+						您对这个答案满意吗
+					</li>
+				</condition>
+			</li>
+		</condition>
+	</template>
+</category>
+
+<category>
+	<pattern>#</pattern>
+	<that>请您为我提供答案</that>
+	<!--<topic>training</topic>-->
+	<template>
+		<think>
+			<set name = "isEmptyAnswer"><srai>TRAININGISEMPTY<star/></srai></set>
+		</think>
+		<condition name = "isEmptyAnswer">
+			<li value = "true">
+				答案不能为空。
+				请您为我提供答案
+			</li>
+			<li value = "false">
+				<think>
+					<set name = "newResponse"><star/></set>
+				</think>
+				<srai>TRAININGLEARNNEWRESPONSE <star/></srai>
+			</li>
+		</condition>
+	</template>
+</category>
+
+<!--学习语句-->
+<category>
+	<pattern>$TRAININGLEARNNEWRESPONSE *</pattern>
+	<!--<topic>training</topic>-->
+	<template>
+		<think>
+			<learn>
+				<category>
+					<pattern><eval><get name = "newPattern"/></eval></pattern>
+					<template><eval><get name = "newResponse"/></eval></template>
+				</category>
+			</learn>
+		</think>
+		当问我：<get name ="newPattern"/>,
+		我会回答：<get name = "newResponse"/>。
+		<srai>TRAININGUSESET  请提问</srai>
+	</template>
+</category>
+
+<!--tools-->
+<category>
+	<pattern>$TRAININGISEMPTY $noresp</pattern>
+	<template>TRUE</template>
+</category>
+<category>
+	<pattern>$TRAININGISEMPTY _</pattern>
+	<template>FALSE</template>
+</category>
+
+
+<category>
+	<pattern>$TRAININGSUPPORT <set>agree</set></pattern>
+	<template>agree</template>
+</category>
+
+<category>
+	<pattern>$TRAININGSUPPORT <set>disagree</set></pattern>
+	<template>disagree</template>
+</category>
+
+<category>
+	<pattern>$TRAININGSUPPORT *</pattern>
+	<template>disunderstand</template>
+</category>
+
+
+
+<!--set-->
+<category>
+	<pattern>$TRAININGUSESET 得意</pattern>
+	<!--<topic>training</topic>-->
+	<template>
+		<random>
+			<li>还不错吧</li>
+			<li>聪明吧</li>
+			<li>还行吧</li>
+			<li>我是一个聪明的机器人</li>
+			<li>不赖吧</li>
+			<li>I am good</li>
+			<li>谢谢</li>
+			<li>thanks</li>
+		</random>
+	</template>
+</category>
+
+<category>
+	<pattern>$TRAININGUSESET 请提问</pattern>
+	<!--<topic>training</topic>-->
+	<template>
+		<think>
+			<set name ="newPattern">请添加问题</set>
+			<set name ="newResponse">请添加回复</set>
+		</think>
+		<random>
+			<li>请提问</li>
+			<li>请继续提问</li>
+			<li>请再提问</li>
+			<li>请说出一个问题</li>
+			<li>请说出问题</li>
+			<li>请告诉我你想知道的问题</li>
+			<li>请问您有什么问题吗</li>
+			<li>请再问我吧</li>
+		</random>
+	</template>
+</category>
+</topic>
+</aiml>
+

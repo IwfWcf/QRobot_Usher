@@ -1,0 +1,9 @@
+Motion File, Date:2013-07-05
+eye	3	1
+sync:lwing;rwing;heart
+lwingup	2	30
+lwingorg	2
+rwingup	2	30
+rwingorg	2
+heart	RGB(255,255,0)	150
+heart	RGB(140,140,0)	150

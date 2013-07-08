@@ -66,17 +66,21 @@ public class AIMLProcessor {
         that = trimTag(that, "that");
         topic = trimTag(topic, "topic");
         template = trimTag(template, "template");
-        if (language.equals("JP") || language.equals("jp")) {
-            String morphPattern = JapaneseTokenizer.morphSentence(pattern);
+
+        //if (language.equals("JP") || language.equals("jp")) {
+
+      /* {
+            String morphPattern = ChineseTokenizer.morphSentence(pattern);
             System.out.println("<pattern>"+pattern+"</pattern> --> <pattern>"+morphPattern+"</pattern>");
             pattern = morphPattern;
-            String morphThatPattern = JapaneseTokenizer.morphSentence(that);
+            String morphThatPattern = ChineseTokenizer.morphSentence(that);
             System.out.println("<that>"+that+"</that> --> <that>"+morphThatPattern+"</that>");
             that = morphThatPattern;
-            String morphTopicPattern = JapaneseTokenizer.morphSentence(topic);
+            String morphTopicPattern = ChineseTokenizer.morphSentence(topic);
             System.out.println("<topic>"+topic+"</topic> --> <topic>"+morphTopicPattern+"</topic>");
             topic = morphTopicPattern;
         }
+         */
         Category c = new Category(0, pattern, that, topic, template, aimlFile);
         categories.add(c);
     }
@@ -243,7 +247,7 @@ public class AIMLProcessor {
         for (int i = 0; i < childList.getLength(); i++) {
             Node child = childList.item(i);
             if (ignoreAttributes == null || !ignoreAttributes.contains(child.getNodeName()))
-              result += recursEval(child, ps);
+                result += recursEval(child, ps);
         }
         } catch (Exception ex) {
             System.out.println("Something went wrong with evalTagContent");
@@ -1031,7 +1035,7 @@ public class AIMLProcessor {
     private static String recursEval(Node node, ParseState ps) {
         try {
         String nodeName = node.getNodeName();
-        if (nodeName.equals("#text")) return node.getNodeValue();
+        if (nodeName.equals("#text")) return ChineseTokenizer.morphSentence(node.getNodeValue());
         else if (nodeName.equals("#comment")) {
             //System.out.println("recursEval comment = "+node.getTextContent());
             return "";

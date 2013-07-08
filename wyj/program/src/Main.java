@@ -29,6 +29,7 @@ import java.util.Collections;
 import java.util.HashSet;
 
 public class Main {
+	
     public static void main (String[] args) {
         MagicStrings.root_path = System.getProperty("user.dir");
         System.out.println("Working Directory = " + MagicStrings.root_path);

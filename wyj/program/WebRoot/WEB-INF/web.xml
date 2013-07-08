@@ -8,4 +8,28 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+        <servlet-name>TestServlet</servlet-name>
+        <servlet-class>com.bot.test.TestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>TestServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>GetMessageServlet</servlet-name>
+        <servlet-class>com.bot.servlet.GetMessageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetMessageServlet</servlet-name>
+        <url-pattern>/getMessage</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>IKTestServlet</servlet-name>
+        <servlet-class>com.bot.test.IKTestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IKTestServlet</servlet-name>
+        <url-pattern>/ikTest</url-pattern>
+    </servlet-mapping>
 </web-app>

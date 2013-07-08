@@ -32,11 +32,11 @@ public class Utilities {
      * @return   reformatted line
      */
     public static String fixCSV (String line) {
-        while (line.endsWith(";")) line = line.substring(0, line.length()-1);
-        if (line.startsWith("\"")) line = line.substring(1, line.length());
-        if (line.endsWith("\"")) line = line.substring(0, line.length()-1);
-        line = line.replaceAll("\"\"", "\"");
-        return line;
+            while (line.endsWith(";")) line = line.substring(0, line.length()-1);
+            if (line.startsWith("\"")) line = line.substring(1, line.length());
+            if (line.endsWith("\"")) line = line.substring(0, line.length()-1);
+            line = line.replaceAll("\"\"", "\"");
+            return line;
     }
     public static String tagTrim(String xmlExpression, String tagName) {
         String stag = "<"+tagName+">";

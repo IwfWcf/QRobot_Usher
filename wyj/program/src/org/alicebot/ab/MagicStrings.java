@@ -28,7 +28,7 @@ public class MagicStrings {
     public static String comment = "removed some recursion from Path";
     public static String aimlif_split_char = ",";
     public static String default_bot = "super";
-    public static String default_language = "EN";
+    public static String default_language = "ZH";
     public static String aimlif_split_char_name = "\\#Comma";
     public static String aimlif_file_suffix = ".csv";
     public static String ab_sample_file = "sample.txt";

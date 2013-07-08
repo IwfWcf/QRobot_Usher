@@ -207,10 +207,11 @@ public class PreProcessor {
      * @return       array of sentences
      */
     public String[] sentenceSplit(String line) {
-        line = line.replace("?",".");
-        line = line.replace("?","?");
-        line = line.replace("?","!");
-        //System.out.println("Sentence split "+line);
+
+        line = line.replace("。",".");
+        line = line.replace("！","!");
+        line = line.replace("？","?");
+        System.out.println("Sentence split "+line);
         String result[] = line.split("[\\.!\\?]");
         for (int i = 0; i < result.length; i++) result[i] = result[i].trim();
         return result;

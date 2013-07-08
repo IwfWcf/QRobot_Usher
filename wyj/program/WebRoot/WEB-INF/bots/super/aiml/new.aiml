@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="GB2312"?>
+<aiml> 
+<category>
+<pattern>你真好看</pattern>
+<template>当然咯</template>
+</category>
+<category>
+<pattern>你真好</pattern>
+<template>嗯</template>
+</category>
+<category>
+<pattern>你聪明吗</pattern>
+<template>小Q很聪明</template>
+</category>
+<category>
+<pattern>真的假的？</pattern>
+<that>小Q很聪明</that>
+<template>真的</template>
+<category>
+<pattern>上午好</pattern>
+<template>上午好</template>
+</category>
+<category>
+<pattern>好</pattern>
+<template>好</template>
+</category>
+<category>
+<pattern>你好吗</pattern>
+<template>我很好</template>
+</category>
+<category>
+<pattern>真的假的</pattern>
+<that>我很好</that>
+<template>真的</template>
+<category>
+<pattern>*名字叫*</pattern>
+<template>我知道了，你的名字叫<star index="2"/></template>
+</category>
+<category>
+<pattern>*的型号是p4</pattern>
+<template>这系列的<star index="1"/>是很棒的</template>
+</category>
+<category>
+<pattern>我有一本书</pattern>
+<template><random>
+<li>这本书多少钱</li>
+<li>什么类型的书</li>
+<li>能借给我看吗</li>
+</random></template>
+</category>
+<category>
+<pattern>*名字叫*</pattern>
+<template>我知道<star index="1"/>的名字叫<star index="2"/></template>
+</category>
+<category>
+<pattern>*是*</pattern>
+<template>我知道了，<star index="1"/>是<star index="2"/></template>
+</category>
+
+</aiml>
